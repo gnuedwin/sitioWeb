@@ -3,28 +3,11 @@
 
 $txtID=(isset($_POST['txtID']))?$_POST['txtID']:""; 
 $txtNombre=(isset($_POST['txtNombre']))?$_POST['txtNombre']:"";
-
 $txtImagen=(isset($_FILES['txtImagen']['name']))?$_FILES['txtImagen']['name']:"";
 $accion=(isset($_POST['accion']))?$_POST['accion']:""; 
 
 
-echo $txtID."<br/>";
-echo $txtNombre."<br/>"; 
-echo $txtImagen."<br/>";
-echo $accion."<br/>"; 
-
-$host="localhost";
-$bd="sitio";
-$usuario="root";
-$contrasenia="";
-
-try {
-        $conexion=new PDO("mysql:host=$host;dbname=$bd",$usuario,$contrasenia);
-        if($conexion){echo "conectado... a sistema";}
-} catch ( Exception $ex) {
-    echo $ex->getMessage();
-}
-
+ 
 switch($accion){
 
     case "Agregar": 
