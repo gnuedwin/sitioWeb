@@ -6,7 +6,7 @@ $txtNombre=(isset($_POST['txtNombre']))?$_POST['txtNombre']:"";
 $txtImagen=(isset($_FILES['txtImagen']['name']))?$_FILES['txtImagen']['name']:"";
 $accion=(isset($_POST['accion']))?$_POST['accion']:""; 
 
-
+include("../config/db.php"); 
  
 switch($accion){
 
