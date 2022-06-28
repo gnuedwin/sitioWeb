@@ -12,8 +12,11 @@ switch($accion){
 
     case "Agregar": 
         //INSERT INTO `libros2` (`id`, `nombre`, `imagen`) VALUES (NULL, 'Libro de php', 'imagen.jpg');
-        $sentenciaSQL= $conexion->prepare("INSERT INTO `libros2` (`id`, `nombre`, `imagen`) VALUES (NULL, 'Libro de php', 'imagen.jpg');");
-        $sentenciaSQL->execute();
+        $sentenciaSQL= $conexion->prepare("INSERT INTO libros2 ( nombre, imagen) VALUES ( :nombre, :imagen);"); 
+        $sentenciaSQL->bindParam(':nombre',$txtNombre);
+        $sentenciaSQL->bindParam(':imagen',$txtImagen);
+        $sentenciaSQL->execute(); 
+
         echo "Presionado botón agregar";
         break; 
 
