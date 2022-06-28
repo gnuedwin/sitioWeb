@@ -11,8 +11,8 @@ include("../config/db.php");
 switch($accion){
 
     case "Agregar": 
-        //INSERT INTO `libros` (`id`, `nombre`, `imagen`) VALUES (NULL, 'Libro de php', 'imagen.jpg');
-        $sentenciaSQL= $conexion->prepare("INSERT INTO `libros` (`id`, `nombre`, `imagen`) VALUES (NULL, 'Libro de php', 'imagen.jpg');");
+        //INSERT INTO `libros2` (`id`, `nombre`, `imagen`) VALUES (NULL, 'Libro de php', 'imagen.jpg');
+        $sentenciaSQL= $conexion->prepare("INSERT INTO `libros2` (`id`, `nombre`, `imagen`) VALUES (NULL, 'Libro de php', 'imagen.jpg');");
         $sentenciaSQL->execute();
         echo "Presionado botón agregar";
         break; 
