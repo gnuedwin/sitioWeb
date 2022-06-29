@@ -9,15 +9,12 @@ $accion=(isset($_POST['accion']))?$_POST['accion']:"";
 include("../config/db.php"); 
  
 switch($accion){
-
     case "Agregar": 
         //INSERT INTO `libros2` (`id`, `nombre`, `imagen`) VALUES (NULL, 'Libro de php', 'imagen.jpg');
         $sentenciaSQL= $conexion->prepare("INSERT INTO libros2 ( nombre, imagen) VALUES ( :nombre, :imagen);"); 
         $sentenciaSQL->bindParam(':nombre',$txtNombre);
         $sentenciaSQL->bindParam(':imagen',$txtImagen);
         $sentenciaSQL->execute(); 
-
-        echo "Presionado botón agregar";
         break; 
 
     case "Modificar":
@@ -27,9 +24,10 @@ switch($accion){
     case "Cancelar":
         echo "Presionado botón cancelar";
         break; 
-         
-}
-
+    } 
+    $sentenciaSQL= $conexion->prepare("SELECT * FROM libros2"); 
+    $sentenciaSQL->execute(); 
+    $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
  ?>
 
@@ -88,13 +86,14 @@ switch($accion){
             </tr>
         </thead>
         <tbody>
+    <?php foreach($listaLibros as $Libro) { ?>
             <tr>
-                <td >2</td>
-                <td>Aprende php</td>
-                <td>imagen.jpg</td> 
+                <td ><?php echo $Libro['id']; ?></td>
+                <td><?php echo $Libro['nombre']; ?></td>
+                <td><?php echo $Libro['imagen']; ?></td> 
                 <td>Seleccionar | Borrar</td>
             </tr>
-           
+           <?php } ?>
         </tbody>
     </table>
     
