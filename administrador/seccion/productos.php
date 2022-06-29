@@ -90,8 +90,23 @@ switch($accion){
             <tr>
                 <td ><?php echo $Libro['id']; ?></td>
                 <td><?php echo $Libro['nombre']; ?></td>
-                <td><?php echo $Libro['imagen']; ?></td> 
-                <td>Seleccionar | Borrar</td>
+                <td><?php echo $Libro['imagen']; ?></td>  
+
+                <td>
+                    
+                Seleccionar | Borrar 
+                <form method="post">
+
+                    <input type="hidden" name="txtID" id="txtID" value="<?php echo $Libro['id']; ?>" /> 
+
+                    <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary" />
+
+                    <input type="submit" name="accion" value="Borrar" class="btn btn-danger" />
+
+                </form>
+
+                </td> 
+
             </tr>
            <?php } ?>
         </tbody>
