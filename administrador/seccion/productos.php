@@ -17,7 +17,14 @@ switch($accion){
         $sentenciaSQL->execute(); 
         break; 
 
-    case "Modificar":
+    case "Modificar": 
+
+        $sentenciaSQL= $conexion->prepare("UPDATE libros2 SET nombre:nombre WHERE id=id"); 
+        $sentenciaSQL->bindParam(':nombre',$txtNombre); 
+        $sentenciaSQL->bindParam(':id',$txtID); 
+        $sentenciaSQL->execute(); 
+
+
         echo "Presionado botón modificar";
          break; 
 
