@@ -22,9 +22,21 @@ switch($accion){
          break; 
 
     case "Cancelar":
-        echo "Presionado botón cancelar";
+        echo "Presionado botón Cancelar";
         break; 
-    } 
+
+    case "Seleccionar":
+        //echo "Presionado botón Seleccionar";
+        break; 
+
+    case "Borrar": 
+        $sentenciaSQL= $conexion->prepare("DELETE  FROM libros2 WHERE id=:id"); 
+        $sentenciaSQL->bindParam(':id',$txtID); 
+        $sentenciaSQL->execute(); 
+        //echo "Presionado botón Borrar";
+        break; 
+    }  
+
     $sentenciaSQL= $conexion->prepare("SELECT * FROM libros2"); 
     $sentenciaSQL->execute(); 
     $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
