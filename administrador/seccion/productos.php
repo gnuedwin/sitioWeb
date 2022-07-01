@@ -76,10 +76,10 @@ switch($accion){
 
         }
 
-        /*$sentenciaSQL= $conexion->prepare("DELETE  FROM libros2 WHERE id=:id"); 
+        $sentenciaSQL= $conexion->prepare("DELETE  FROM libros2 WHERE id=:id"); 
         $sentenciaSQL->bindParam(':id',$txtID); 
         $sentenciaSQL->execute(); 
-        */
+        
         break; 
     }  
 
