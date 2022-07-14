@@ -36,7 +36,7 @@ switch($accion){
 
         if($txtImagen!=""){ 
             $fecha = new DateTime();
-            $nombreArchivo=($txtImagen!="")?$fecha->getTimestamp()."_".$_FILES["$txtImagen"]["name"]:"imagen.jpg"; 
+            $nombreArchivo=($txtImagen!="")?$fecha->getTimestamp()."_".$_FILES["$txtImagen"]["name"]:"imagen.jpg"; //$txtImagen
             $tmpImagen=$_FILES["txtImagen"]["tmp_name"]; 
 
             move_uploaded_file($tmpImagen,"../../img/".$nombreArchivo); 
