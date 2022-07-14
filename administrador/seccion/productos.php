@@ -34,7 +34,13 @@ switch($accion){
         $sentenciaSQL->bindParam(':id',$txtID); 
         $sentenciaSQL->execute(); 
 
-        if($txtImagen!=""){
+        if($txtImagen!=""){ 
+            $fecha = new DateTime();
+            $nombreArchivo=($txtImagen!="")?$fecha->getTimestamp()."_".$_FILES["$txtImagen"]["name"]:"imagen.jpg"; 
+
+            $tmpImagen=$_FILES["txtImagen"]["tmp_name"];
+
+
             $sentenciaSQL= $conexion->prepare("UPDATE libros2 SET imagen=:imagen WHERE id=:id"); 
             $sentenciaSQL->bindParam(':imagen',$txtImagen); 
             $sentenciaSQL->bindParam(':id',$txtID); 
