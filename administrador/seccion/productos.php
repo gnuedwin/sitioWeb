@@ -20,7 +20,7 @@ switch($accion){
         $tmpImagen=$_FILES["txtImagen"]["tmp_name"];
 
         if($tmpImagen!=""){
-            move_uploaded_file($tmpImagen,"../../img".$nombreArchivo);
+            move_uploaded_file($tmpImagen,"../../img/".$nombreArchivo);
         }
 
         $sentenciaSQL->bindParam(':imagen',$nombreArchivo);
