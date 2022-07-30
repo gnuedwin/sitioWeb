@@ -67,7 +67,7 @@ switch($accion){
          break; 
 
     case "Cancelar":
-        echo "Presionado botón Cancelar";
+        header("Location:productos.php");
         break; 
 
     case "Seleccionar": 
@@ -142,13 +142,13 @@ switch($accion){
   <?php } ?>
 
 
-<input type="file" required class="form-control" name="txtImagen" id="txtImagen"  placeholder="Imagen">
+<input type="file" class="form-control" name="txtImagen" id="txtImagen"  placeholder="Imagen">
 </div> 
 
 <div class="btn-group" role="group" aria-label="">
-    <button type="submit" name="accion" value="Agregar" class="btn btn-success">Agregar</button>
-    <button type="Submit" name="accion" value="Modificar" class="btn btn-warning">Modificar</button>
-    <button type="Submit" name="accion" value="Cancelar" class="btn btn-info">Cancelar</button>
+    <button type="submit" name="accion" <?php echo ($accion=="Seleccionar")?"disabled":""; ?> value="Agregar" class="btn btn-success">Agregar</button>
+    <button type="Submit" name="accion" <?php echo ($accion!="Seleccionar")?"disabled":""; ?> value="Modificar" class="btn btn-warning">Modificar</button>
+    <button type="Submit" name="accion" <?php echo ($accion!="Seleccionar")?"disabled":""; ?> value="Cancelar" class="btn btn-info">Cancelar</button>
 </div>
 
 </form> 
