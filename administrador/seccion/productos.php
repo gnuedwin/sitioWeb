@@ -122,7 +122,7 @@ switch($accion){
 
 <div class = "form-group">
 <label for="txtID">ID:</label>
-<input type="text" class="form-control" value="<?php echo $txtID ?>" name="txtID" id="txtID"  placeholder="ID">
+<input type="text" required readonly class="form-control" value="<?php echo $txtID ?>" name="txtID" id="txtID"  placeholder="ID">
 </div>  
 
 <div class = "form-group">
