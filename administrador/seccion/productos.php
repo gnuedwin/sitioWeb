@@ -127,7 +127,7 @@ switch($accion){
 
 <div class = "form-group">
 <label for="txtNombre">Nombre:</label>
-<input type="text" class="form-control" value="<?php echo $txtNombre ?>"  name="txtNombre" id="txtNombre"  placeholder="Nombre del libro">
+<input type="text" required class="form-control" value="<?php echo $txtNombre ?>"  name="txtNombre" id="txtNombre"  placeholder="Nombre del libro">
 </div>  
 
 <div class = "form-group">
@@ -142,7 +142,7 @@ switch($accion){
   <?php } ?>
 
 
-<input type="file" class="form-control" name="txtImagen" id="txtImagen"  placeholder="Imagen">
+<input type="file" required class="form-control" name="txtImagen" id="txtImagen"  placeholder="Imagen">
 </div> 
 
 <div class="btn-group" role="group" aria-label="">
