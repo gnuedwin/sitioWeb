@@ -24,7 +24,9 @@ switch($accion){
         }
 
         $sentenciaSQL->bindParam(':imagen',$nombreArchivo);
-        $sentenciaSQL->execute(); 
+        $sentenciaSQL->execute();  
+
+        header("Location:productos.php");
         break; 
 
     case "Modificar": 
@@ -63,7 +65,7 @@ switch($accion){
     }
 
 
-        
+         header("Location:productos.php");
          break; 
 
     case "Cancelar":
@@ -101,6 +103,7 @@ switch($accion){
         $sentenciaSQL->bindParam(':id',$txtID); 
         $sentenciaSQL->execute(); 
         
+        header("Location:productos.php");
         break; 
     }  
 
